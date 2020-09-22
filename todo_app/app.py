@@ -1,13 +1,14 @@
+
 from flask import Flask, render_template, redirect, url_for, request
-from todo_app.flask_config import Config
+from flask_config import Config
 from todo_app.data import session_items as session
 
 app = Flask(__name__)
 app.config.from_object(Config)
 
-f = open("API_key_token.txt", "r")
-print(f.read().split("\n"))
-
+f = open("API_key_token.txt", "r").read().split("\n")
+api_key = f.read[0]
+api_token = f.read[1]
 
 @app.route('/')
 def index():
